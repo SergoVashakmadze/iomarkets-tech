@@ -1,0 +1,185 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Twitter, Github, Mail, ExternalLink, Linkedin } from 'lucide-react';
+
+const footerLinks = {
+  solutions: [
+    { name: 'AI Solutions', href: '#ai' },
+    { name: 'Web3 Infrastructure', href: '#web3' },
+    { name: 'Cloud Services', href: '#cloud' },
+    { name: 'Security', href: '#security' },
+  ],
+  company: [
+    { name: 'About', href: '#about' },
+    { name: 'Careers', href: '#careers' },
+    { name: 'Contact', href: '#contact' },
+  ],
+  resources: [
+    { name: 'Documentation', href: '#docs' },
+    { name: 'IoMarkets.org', href: 'https://iomarkets.org', external: true },
+    { name: 'Help Center', href: '#help' },
+  ],
+  legal: [
+    { name: 'Privacy Policy', href: '#privacy' },
+    { name: 'Terms of Service', href: '#terms' },
+  ],
+};
+
+const socialLinks = [
+  { name: 'Twitter', href: 'https://twitter.com/iomarkets', icon: Twitter },
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/iomarkets', icon: Linkedin },
+  { name: 'GitHub', href: 'https://github.com/iomarkets', icon: Github },
+  { name: 'Email', href: 'mailto:tech@iomarkets.org', icon: Mail },
+];
+
+export const Footer: React.FC = () => {
+  return (
+    <footer className="bg-slate-900 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          {/* Logo and Description - Takes 2 columns on lg */}
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-10 h-10 rounded-lg overflow-hidden relative border border-slate-700/50 group-hover:border-slate-500/50 transition-all flex items-center justify-center bg-slate-800">
+                <img
+                  src="/images/IoMarkets_Logo.png"
+                  alt="IoMarkets"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-white">IoMarkets</span>
+                <span className="text-amber-500 text-2xl font-bold">®</span>
+              </div>
+            </Link>
+            <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
+              Cutting-edge technology infrastructure and solutions powering the future of financial services.
+              From cloud architecture to AI implementations.
+            </p>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-slate-800 text-gray-400 hover:text-white hover:bg-slate-700 transition-all flex items-center justify-center"
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Solutions Links */}
+          <div>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">
+              Solutions
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.solutions.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">
+              Company
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources & Legal Combined */}
+          <div>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">
+              Resources
+            </h4>
+            <ul className="space-y-4 mb-8">
+              {footerLinks.resources.map((link) => (
+                <li key={link.name}>
+                  {'external' in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5"
+                    >
+                      {link.name}
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">
+              Legal
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.legal.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-slate-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-500">
+              &copy; {new Date().getFullYear()} IoMarkets<sup>&reg;</sup> LLC. All rights reserved.
+            </p>
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <span>Part of the</span>
+              <a
+                href="https://iomarkets.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors font-semibold inline-flex items-center gap-1"
+              >
+                IoMarkets Ecosystem
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
