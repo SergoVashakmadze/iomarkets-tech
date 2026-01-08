@@ -2,49 +2,54 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Monitor, Code, Cloud, Shield, Zap, Globe, ArrowRight, CheckCircle, Brain, Network } from 'lucide-react';
 
-// Floating Elements Component for hero
+// Floating Elements Component for hero - VIBRANT
 const FloatingElements = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Animated background orbs */}
+    {/* Animated background orbs - VIBRANT */}
     <div
       className="absolute top-1/4 left-1/4 w-96 h-96 orb-hero"
-      style={{ background: 'radial-gradient(circle, #8B5CF6 0%, transparent 70%)' }}
+      style={{ background: 'radial-gradient(circle, #A855F7 0%, transparent 70%)' }}
     />
     <div
       className="absolute top-1/2 right-1/4 w-80 h-80 orb-hero"
-      style={{ background: 'radial-gradient(circle, #6366F1 0%, transparent 70%)', animationDelay: '-3s' }}
+      style={{ background: 'radial-gradient(circle, #818CF8 0%, transparent 70%)', animationDelay: '-3s' }}
     />
     <div
       className="absolute bottom-1/4 left-1/3 w-72 h-72 orb-hero"
-      style={{ background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)', animationDelay: '-5s' }}
+      style={{ background: 'radial-gradient(circle, #60A5FA 0%, transparent 70%)', animationDelay: '-5s' }}
     />
     <div
       className="absolute top-1/3 right-1/3 w-64 h-64 orb-hero"
-      style={{ background: 'radial-gradient(circle, #06B6D4 0%, transparent 70%)', animationDelay: '-7s' }}
+      style={{ background: 'radial-gradient(circle, #22D3EE 0%, transparent 70%)', animationDelay: '-7s' }}
+    />
+    <div
+      className="absolute bottom-1/3 right-[15%] w-72 h-72 orb-hero"
+      style={{ background: 'radial-gradient(circle, #E879F9 0%, transparent 70%)', animationDelay: '-2s' }}
     />
 
-    {/* Floating geometric shapes */}
-    <div className="absolute top-[20%] left-[10%] w-4 h-4 bg-violet-500/20 rounded-full float-elegant" style={{ animationDelay: '0s' }} />
-    <div className="absolute top-[30%] right-[15%] w-6 h-6 bg-indigo-500/20 rounded-full float-medium" style={{ animationDelay: '-2s' }} />
-    <div className="absolute top-[60%] left-[20%] w-3 h-3 bg-blue-500/20 rounded-full float-fast" style={{ animationDelay: '-4s' }} />
-    <div className="absolute top-[70%] right-[25%] w-5 h-5 bg-cyan-500/20 rounded-full float-elegant" style={{ animationDelay: '-1s' }} />
-    <div className="absolute top-[40%] left-[70%] w-4 h-4 bg-violet-400/20 rounded-full float-medium" style={{ animationDelay: '-3s' }} />
+    {/* Floating geometric shapes - VIBRANT */}
+    <div className="absolute top-[20%] left-[10%] w-4 h-4 bg-violet-400/50 rounded-full float-elegant" style={{ animationDelay: '0s' }} />
+    <div className="absolute top-[30%] right-[15%] w-6 h-6 bg-fuchsia-400/45 rounded-full float-medium" style={{ animationDelay: '-2s' }} />
+    <div className="absolute top-[60%] left-[20%] w-3 h-3 bg-blue-400/50 rounded-full float-fast" style={{ animationDelay: '-4s' }} />
+    <div className="absolute top-[70%] right-[25%] w-5 h-5 bg-cyan-400/50 rounded-full float-elegant" style={{ animationDelay: '-1s' }} />
+    <div className="absolute top-[40%] left-[70%] w-4 h-4 bg-purple-400/45 rounded-full float-medium" style={{ animationDelay: '-3s' }} />
 
-    {/* Decorative rings */}
-    <div className="absolute top-[25%] right-[10%] w-32 h-32 border border-violet-500/10 rounded-full rotate-slow" />
-    <div className="absolute bottom-[20%] left-[5%] w-24 h-24 border border-indigo-500/10 rounded-full rotate-slow" style={{ animationDirection: 'reverse' }} />
+    {/* Decorative rings - VIBRANT */}
+    <div className="absolute top-[25%] right-[10%] w-32 h-32 border-2 border-violet-500/40 rounded-full rotate-slow" />
+    <div className="absolute bottom-[20%] left-[5%] w-24 h-24 border-2 border-fuchsia-500/35 rounded-full rotate-slow" style={{ animationDirection: 'reverse' }} />
   </div>
 );
 
-// Animated Wave Lines Component
+// Animated Wave Lines Component - VIBRANT
 const AnimatedLines = () => (
-  <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden opacity-30">
+  <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden opacity-50">
     <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
       <defs>
         <linearGradient id="waveGradientViolet" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
-          <stop offset="50%" stopColor="#6366F1" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="#A855F7" stopOpacity="0.5" />
+          <stop offset="30%" stopColor="#818CF8" stopOpacity="0.7" />
+          <stop offset="60%" stopColor="#22D3EE" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#E879F9" stopOpacity="0.5" />
         </linearGradient>
       </defs>
       <path
@@ -161,9 +166,9 @@ const IoMarketsTech: React.FC = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up-delay-1">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up-delay-1 drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]">
               IoMarkets<sup className="text-lg">®</sup>{' '}
-              <span className="gradient-text-animated-violet">Technology</span>
+              <span className="gradient-text-animated-violet drop-shadow-[0_0_40px_rgba(168,85,247,0.6)]">Technology</span>
             </h1>
 
             {/* Animated Tagline */}
@@ -182,11 +187,11 @@ const IoMarketsTech: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up-delay-4">
-              <button className="group bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-medium hover:from-violet-500 hover:to-indigo-500 transition-all duration-300 flex items-center justify-center shadow-lg shadow-violet-500/25">
+              <button className="group bg-gradient-to-r from-fuchsia-500 via-violet-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-medium hover:from-fuchsia-400 hover:via-violet-500 hover:to-indigo-500 transition-all duration-300 flex items-center justify-center shadow-lg shadow-violet-500/40 hover:shadow-fuchsia-500/50 hover:scale-105">
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 rounded-xl font-medium transition-all duration-300 glass-violet hover:bg-violet-500/20">
+              <button className="px-8 py-4 rounded-xl font-medium transition-all duration-300 glass-violet hover:bg-violet-500/25 border border-violet-500/40 hover:border-fuchsia-400/60 hover:scale-105">
                 View Solutions
               </button>
             </div>
