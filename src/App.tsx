@@ -10,7 +10,7 @@ export default function App() {
       <div className="min-h-screen flex flex-col bg-slate-50">
         <TickerTape />
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 content-padding">
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
